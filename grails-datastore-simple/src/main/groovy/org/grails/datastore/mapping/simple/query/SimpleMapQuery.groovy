@@ -142,6 +142,15 @@ class SimpleMapQuery extends Query {
             final def total = results.size()
             if (offset > total) return Collections.emptyList()
 
+            if (orderBy) {
+                orderBy.each { Query.Order order ->
+                    def sorted = results.sort { it."${order.property}"}
+                    final def os = order.direction.toString()
+                    results = os == "DESC" ? sorted.reverse() : sorted
+                }
+            }
+
+
             // 0..3
             // 0..-1
             // 1..1
@@ -150,15 +159,7 @@ class SimpleMapQuery extends Query {
             def to = max == -1 ? -1 : (offset + max)-1      // 15
             if (to >= total) to = -1
 
-            def finalResult = results[from..to]
-            if (orderBy) {
-                orderBy.each { Query.Order order ->
-                    def sorted = finalResult.sort { it."${order.property}"}
-                    final def os = order.direction.toString()
-                    finalResult = os == "DESC" ? sorted.reverse() : sorted
-                }
-            }
-            return finalResult
+            return results[from..to]
         }
         return Collections.emptyList()
     }

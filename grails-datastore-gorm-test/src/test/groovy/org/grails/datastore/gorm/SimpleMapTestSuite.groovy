@@ -20,32 +20,34 @@ import grails.gorm.tests.ProxyLoadingSpec
 import grails.gorm.tests.DetachedCriteriaSpec
 import grails.gorm.tests.WhereMethodSpec
 import grails.gorm.tests.EnumSpec
+import grails.gorm.tests.OrderBySpec
 
 /**
  * @author graemerocher
  */
 @RunWith(Suite)
 @SuiteClasses([
-//WhereMethodSpec
-//  ProxyLoadingSpec,
-//  QueryAfterPropertyChangeSpec,
-//  CircularOneToManySpec,
-//  InheritanceSpec,
-//  FindByMethodSpec,
-//  ListOrderBySpec,
-//  GroovyProxySpec,
-//  DomainEventsSpec,
-DetachedCriteriaSpec,
-//    QueryAssociationSpec,
-//    WhereMethodSpec,
-//  CriteriaBuilderSpec,
-//  NegationSpec,
-//  UpdateWithProxyPresentSpec,
-//  AttachMethodSpec,
-//  WithTransactionSpec,
-//    EnumSpec,
-//    DomainEventsSpec,
-//CustomStringIdentifierSpec
+    WhereMethodSpec,
+    ProxyLoadingSpec,
+    QueryAfterPropertyChangeSpec,
+    CircularOneToManySpec,
+    InheritanceSpec,
+    FindByMethodSpec,
+    ListOrderBySpec,
+    GroovyProxySpec,
+    DomainEventsSpec,
+    DetachedCriteriaSpec,
+    QueryAssociationSpec,
+    WhereMethodSpec,
+    CriteriaBuilderSpec,
+    NegationSpec,
+    UpdateWithProxyPresentSpec,
+    AttachMethodSpec,
+    WithTransactionSpec,
+    EnumSpec,
+    DomainEventsSpec,
+    CustomStringIdentifierSpec,
+    OrderBySpec
 ])
 class SimpleMapTestSuite {
 }

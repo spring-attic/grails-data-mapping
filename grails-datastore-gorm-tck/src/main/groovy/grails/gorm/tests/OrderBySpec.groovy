@@ -1,5 +1,7 @@
 package grails.gorm.tests
 
+import spock.lang.Unroll
+
 /**
  * Abstract base test for order by queries. Subclasses should do the necessary setup to configure GORM
  */
@@ -53,5 +55,21 @@ class OrderBySpec extends GormDatastoreSpec {
             45 == results[0].age
             44 == results[1].age
             43 == results[2].age
+    }
+
+    @Unroll("Test order by property name #order with dynamic finder returning single result")
+    void "Test order by property name with dynamic finder returning single result"() {
+        given:
+            [Rob: 23, Glenn: 22, Tomas: 21, Marcin: 24].each { name, age ->
+                new TestEntity(name: name, age: age).save()
+            }
+
+        expect:
+            TestEntity.findByAgeGreaterThan(21, [sort: 'age', order: order]).age == expectedAge
+
+        where:
+            order  | expectedAge
+            'asc'  | 22
+            'desc' | 24
     }
 }

@@ -4,8 +4,8 @@ import org.grails.datastore.mapping.validation.ValidatingEventListener
 
 import org.grails.datastore.mapping.model.PersistentEntity
 import org.springframework.validation.Validator
-import org.grails.datastore.gorm.validation.CascadingValidator
 import spock.lang.Unroll
+import org.codehaus.groovy.grails.validation.CascadingValidator
 
 /**
  * Tests validation semantics.

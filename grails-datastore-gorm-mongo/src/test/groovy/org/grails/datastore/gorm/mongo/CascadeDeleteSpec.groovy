@@ -16,9 +16,11 @@ class CascadeDeleteSpec extends GormDatastoreSpec {
             def s = new CascadeUserSettings()
             u.settings = [s] as Set
 
-            u.save(flush:true)
+        expect:
+            CascadeUserSettings.findAll().isEmpty()
 
         when:"The owner is queried"
+            u.save(flush:true)
             def found1 = CascadeUser.findByName("user2")
             def found1a = CascadeUserSettings.findByUser(found1)
 
@@ -29,11 +31,11 @@ class CascadeDeleteSpec extends GormDatastoreSpec {
         when:"The owner is deleted"
             found1.delete(flush:true)
             def found2 = CascadeUser.findByName("user2")
-            def found1b = CascadeUserSettings.findByUser(found1)
+            def allUserSettings = CascadeUserSettings.findAll()
 
         then:"So is the child"
             found2 == null
-            found1b == null
+            allUserSettings.isEmpty()
     }
 
     @Override
@@ -46,17 +48,22 @@ class CascadeDeleteSpec extends GormDatastoreSpec {
 class CascadeUser {
 
     ObjectId id
+
     String name
 
     Set<CascadeUserSettings> settings
     static hasMany = [settings:CascadeUserSettings]
-}
 
+    static constraints = {
+    }
+}
 @Entity
 class CascadeUserSettings {
 
     ObjectId id
+
     boolean someSetting = true
 
     static belongsTo = [user:CascadeUser]
+
 }

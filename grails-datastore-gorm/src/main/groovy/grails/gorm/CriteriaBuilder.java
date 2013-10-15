@@ -986,7 +986,9 @@ public class CriteriaBuilder extends GroovyObjectSupport implements Criteria, Pr
             }
         } finally {
             Query.Junction logicalExpression = logicalExpressionStack.remove(logicalExpressionStack.size()-1);
-            addToCriteria(logicalExpression);
+            if (!logicalExpression.isEmpty()) {
+                addToCriteria(logicalExpression);
+            }
         }
     }
 

@@ -1,4 +1,0 @@
-dependencies {
-    compile project(":grails-datastore-gorm")
-    compile 'junit:junit:4.8.2'
-}

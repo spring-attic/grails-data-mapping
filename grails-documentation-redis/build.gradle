@@ -21,7 +21,7 @@ else {
         classpath = files(groovyProjects().collect { project ->
             [project.sourceSets.main.compileClasspath, project.sourceSets.main.classes]
         })
-        options.links("http://download.oracle.com/javase/6/docs/api/", "http://groovy.codehaus.org/gapi/")
+        options.links("https://download.oracle.com/javase/6/docs/api/", "https://groovy.codehaus.org/gapi/")
         doFirst {
             title = "Datastore API $version"
         }

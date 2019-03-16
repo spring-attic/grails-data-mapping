@@ -1,5 +1,5 @@
 repositories {
-    mavenRepo urls:'http://m2.neo4j.org/'
+    mavenRepo urls:'https://m2.neo4j.org/'
 }
 
 dependencies {

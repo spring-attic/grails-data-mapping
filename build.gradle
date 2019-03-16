@@ -40,7 +40,7 @@ subprojects {
     repositories {
         mavenRepo name:'mavenLocal',
                   urls:new File(System.getProperty("user.home"), ".m2/repository").toURL().toString()
-        mavenRepo(urls: "http://repo.grails.org/grails/core") {
+        mavenRepo(urls: "https://repo.grails.org/grails/core") {
             if (project.hasProperty('snapshotTimeout')) {
                 setSnapshotTimeout(Long.parseLong(project.snapshotTimeout))
             }
@@ -124,8 +124,8 @@ subprojects {
                 licenses {
                     license {
                         name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                        distribution 'http://github.com/SpringSource/grails-data-mapping/'
+                        url 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'https://github.com/SpringSource/grails-data-mapping/'
                     }
                 }
             }
@@ -133,8 +133,8 @@ subprojects {
 
         uploadArchives {
             description = "Does a maven deploy of archives artifacts"
-            def milestoneRepositoryUrl = "http://repo.grails.org/grails/libs-releases-local"
-            def snapshotRepositoryUrl = "http://repo.grails.org/grails/libs-snapshots-local"
+            def milestoneRepositoryUrl = "https://repo.grails.org/grails/libs-releases-local"
+            def snapshotRepositoryUrl = "https://repo.grails.org/grails/libs-snapshots-local"
 
             // add a configuration with a classpath that includes our s3 maven deployer
             configurations { deployerJars }
@@ -175,7 +175,7 @@ subprojects {
                     licenses {
                         license {
                             name 'The Apache Software License, Version 2.0'
-                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                            url 'https://www.apache.org/licenses/LICENSE-2.0.txt'
                             distribution 'repo'
                         }
                     }

@@ -1,5 +1,5 @@
 repositories {
-    mavenRepo urls:'http://maven-gae-plugin.googlecode.com/svn/repository/'
+    mavenRepo urls:'https://maven-gae-plugin.googlecode.com/svn/repository/'
 }
 
 dependencies {

@@ -1,5 +1,5 @@
 repositories {
-    mavenRepo urls:'http://eaio.com/maven2'
+    mavenRepo urls:'https://eaio.com/maven2'
 }
 
 dependencies {

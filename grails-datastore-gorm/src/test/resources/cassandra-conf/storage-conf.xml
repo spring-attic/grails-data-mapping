@@ -46,7 +46,7 @@
   <AutoBootstrap>false</AutoBootstrap>
 
   <!--
-   ~ See http://wiki.apache.org/cassandra/HintedHandoff
+   ~ See https://wiki.apache.org/cassandra/HintedHandoff
   -->
   <HintedHandoffEnabled>true</HintedHandoffEnabled>
 
@@ -281,7 +281,7 @@
   <!--
    ~ Size of compacted row above which to log a warning.  (If compacted
    ~ rows do not fit in memory, Cassandra will crash.  This is explained
-   ~ in http://wiki.apache.org/cassandra/CassandraLimitations and is
+   ~ in https://wiki.apache.org/cassandra/CassandraLimitations and is
    ~ scheduled to be fixed in 0.7.)
   -->
   <RowWarningThresholdInMB>512</RowWarningThresholdInMB>

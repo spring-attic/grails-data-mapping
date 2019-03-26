@@ -33,10 +33,10 @@ import org.grails.plugin.mongo.PersistenceContextInterceptorAggregator
 
 class MongodbGrailsPlugin {
     def license = "Apache 2.0 License"
-    def organization = [ name: "SpringSource", url: "http://www.springsource.org/" ]
+    def organization = [ name: "SpringSource", url: "https://www.springsource.org/" ]
     def developers = [
         [ name: "Graeme Rocher", email: "grocher@vmware.com" ] ]
-    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPMONGODB" ]
+    def issueManagement = [ system: "JIRA", url: "https://jira.grails.org/browse/GPMONGODB" ]
     def scm = [ url: "https://github.com/SpringSource/grails-data-mapping" ]
 
     def version = "1.0.0.M6.1"
@@ -51,7 +51,7 @@ A plugin that integrates the Mongo document datastore into Grails, providing
 a GORM API onto it
 '''
 
-    def documentation = "http://grails.org/plugin/mongodb"
+    def documentation = "https://grails.org/plugin/mongodb"
 
     def doWithSpring = {
         def mongoConfig = application.config?.grails?.mongo

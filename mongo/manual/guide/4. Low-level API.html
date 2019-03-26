@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>4 Low-level API 1.3.0.GA</title>
@@ -90,8 +90,8 @@ function addJsClass() {
                 
 
 <h1 id="4. Low-level API">4 Low-level API</h1>
-A lower level API is provided by the plugin that is based on the <a href="http://github.com/poiati/gmongo" target="blank">GMongo</a> project.<p class="paragraph"/>GMongo is a simple Groovy wrapper around the regular <a href="http://www.mongodb.org/display/DOCS/Java+Language+Center" target="blank">Mongo Java Driver</a>. In general you can refer to the Mongo Java Drivers <a href="http://api.mongodb.org/java/current/index.html" target="blank">Javadoc API</a> when using GMongo.<p class="paragraph"/>GMongo provides some nice enhancements like easy access to collections using the dot operator and support for Groovy operator overloading.<p class="paragraph"/><blockquote class="note">
-There is an excellent tutorial on how to use the Mongo Java driver's API directly in the <a href="http://www.mongodb.org/display/DOCS/Java+Tutorial" target="blank">Mongo documentation</a>
+A lower level API is provided by the plugin that is based on the <a href="https://github.com/poiati/gmongo" target="blank">GMongo</a> project.<p class="paragraph"/>GMongo is a simple Groovy wrapper around the regular <a href="https://www.mongodb.org/display/DOCS/Java+Language+Center" target="blank">Mongo Java Driver</a>. In general you can refer to the Mongo Java Drivers <a href="https://api.mongodb.org/java/current/index.html" target="blank">Javadoc API</a> when using GMongo.<p class="paragraph"/>GMongo provides some nice enhancements like easy access to collections using the dot operator and support for Groovy operator overloading.<p class="paragraph"/><blockquote class="note">
+There is an excellent tutorial on how to use the Mongo Java driver's API directly in the <a href="https://www.mongodb.org/display/DOCS/Java+Tutorial" target="blank">Mongo documentation</a>
 </blockquote><p class="paragraph"/>An example of GMongo usage can be seen below:<p class="paragraph"/><div class="code"><pre>// Get a db reference in the old fashion way
 def db = mongo.getDB(<span class="java&#45;quote">"gmongo"</span>)<p class="paragraph"/>// Collections can be accessed as a db property (like the javascript API)
 assert db.myCollection <span class="java&#45;keyword">instanceof</span> com.mongodb.DBCollection
@@ -103,7 +103,7 @@ db.languages.insert(name: 'Ruby')
 // Yet another way
 db.languages &#60;&#60; &#91;name: 'Python'&#93;<p class="paragraph"/>// Insert a list of documents
 db.languages &#60;&#60; &#91;&#91;name: 'Javascript', type: 'prototyped'&#93;, &#91;name: 'Ioke', type: 'prototyped'&#93;&#93;</pre></div><p class="paragraph"/>
-To get hold of the <code>mongo</code> instance (which is an of the <a href="http://api.mongodb.org/java/current/com/mongodb/Mongo.html" target="blank">com.mongodb.Mongo</a> class) inside a controller or service simple define a <code>mongo</code> property:<p class="paragraph"/><div class="code"><pre>def mongo
+To get hold of the <code>mongo</code> instance (which is an of the <a href="https://api.mongodb.org/java/current/com/mongodb/Mongo.html" target="blank">com.mongodb.Mongo</a> class) inside a controller or service simple define a <code>mongo</code> property:<p class="paragraph"/><div class="code"><pre>def mongo
 def myAction = &#123;
     def db = mongo.getDB(<span class="java&#45;quote">"mongo"</span>)
     db.languages.insert(&#91;name: 'Groovy'&#93;)

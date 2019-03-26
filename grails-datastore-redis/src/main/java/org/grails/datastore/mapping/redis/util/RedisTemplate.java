@@ -26,37 +26,37 @@ import java.util.Set;
 public interface RedisTemplate<T, S> {
 
     /**
-     * See http://redis.io/commands/append
+     * See https://redis.io/commands/append
      */
     boolean append(String key, Object val);
 
     /**
-     * See http://redis.io/commands/blpop
+     * See https://redis.io/commands/blpop
      */
     List<String> blpop(int timeout, String...keys);
 
     /**
-     * See http://redis.io/commands/brpop
+     * See https://redis.io/commands/brpop
      */
     List<String> brpop(int timeout, String...keys);
 
     /**
-     * See http://redis.io/commands/decr
+     * See https://redis.io/commands/decr
      */
     boolean decr(String key);
 
     /**
-     * See http://redis.io/commands/decrby
+     * See https://redis.io/commands/decrby
      */
     boolean decrby(String key, int amount);
 
     /**
-     * See http://redis.io/commands/del
+     * See https://redis.io/commands/del
      */
     void del(String redisKey);
 
     /**
-     * See http://redis.io/commands/del
+     * See https://redis.io/commands/del
      */
     long del(String... redisKey);
 

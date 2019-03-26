@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>GORM for Neo4j 1.0.0</title>
@@ -72,7 +72,7 @@ person.addToPets(pet)
 person.save(flush: <span class="java&#45;keyword">true</span>)
 session.clear()<p class="paragraph"/>when:
 def result = person.cypher(<span class="java&#45;quote">"start n=node(&#123;<span class="java&#45;keyword">this</span>&#125;) match n&#45;&#91;:pets&#93;&#45;&#62;m <span class="java&#45;keyword">return</span> m"</span>)<p class="paragraph"/>then:
-result.iterator().size() == 1</pre></div><p class="paragraph"/><h2>Description</h2><p class="paragraph"/><code>cypher</code> is invoked on any domain instance and returns a <a href="http://api.neo4j.org/current/org/neo4j/cypher/javacompat/ExecutionResult.html" target="blank">ExecutionResult</a>
+result.iterator().size() == 1</pre></div><p class="paragraph"/><h2>Description</h2><p class="paragraph"/><code>cypher</code> is invoked on any domain instance and returns a <a href="https://neo4j.com/api_docs/" target="blank">ExecutionResult</a>
 The parameters passed are:
 <ul class="star">
 <li>cypher query string. The query string might use a implizit <code>this</code> parameter pointing to the instance's node</li>

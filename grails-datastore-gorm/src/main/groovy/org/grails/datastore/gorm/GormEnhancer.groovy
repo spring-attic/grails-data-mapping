@@ -107,7 +107,7 @@ class GormEnhancer {
 
                     final tooCall = new InstanceMethodInvokingClosure(apiProvider, methodName, parameterTypes)
                     def pt = parameterTypes
-                    // Hack to workaround http://jira.codehaus.org/browse/GROOVY-4720
+                    // Hack to workaround https://jira.codehaus.org/browse/GROOVY-4720
                     final closureMethod = new ClosureStaticMetaMethod(methodName, cls, tooCall, pt) {
                         @Override
                         int getModifiers() { Modifier.PUBLIC }

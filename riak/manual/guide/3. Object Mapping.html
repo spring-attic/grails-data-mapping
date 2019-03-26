@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>3 Object Mapping 1.0.0.M4</title>
@@ -101,7 +101,7 @@ function addJsClass() {
                 
 
 <h1 id="3. Object Mapping">3 Object Mapping</h1>
-Object mapping works largely as described in the <a href="http://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html" target="blank">documentation on GORM</a>. In general you can continue to model your associations using typical GORM notation such as <code>hasMany</code>, <code>belongsTo</code> and so on.<p class="paragraph"/>Here is an example of a domain class that can be persisted to Riak:<p class="paragraph"/><div class="code"><pre>class Person &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> firstName
+Object mapping works largely as described in the <a href="https://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html" target="blank">documentation on GORM</a>. In general you can continue to model your associations using typical GORM notation such as <code>hasMany</code>, <code>belongsTo</code> and so on.<p class="paragraph"/>Here is an example of a domain class that can be persisted to Riak:<p class="paragraph"/><div class="code"><pre>class Person &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> firstName
     <span class="java&#45;object">String</span> lastName<p class="paragraph"/>    <span class="java&#45;keyword">static</span> constraints = &#123;
         firstName blank:<span class="java&#45;keyword">false</span>
         lastName blank:<span class="java&#45;keyword">false</span>
@@ -111,7 +111,7 @@ Object mapping works largely as described in the <a href="http://grails.org/doc/
 
 
 <h2 id="3.1 Dealing with Eventual Consistency">3.1 Dealing with Eventual Consistency</h2>
-One of the important features of Riak is that, by default, Riak promises to be <a href="http://blog.basho.com/category/eventual-consistency/" target="blank">&#34;eventually consistent&#34; rather than synchronously up-to-date</a>. This means that when an update to data in Riak is issued, the update method might return before the data has been fully written to disk. This increases performance of writes but means operations that depend on just-inserted data being available (for queries, for example) need to be careful about when they are run.<p class="paragraph"/>If you want a <code>save()</code> call to be guaranteed to have persisted the object to disk before returning to your application, then you need to pass a QOS (Quality of Service) parameter to the entity's <code>save</code> method. You use the same names for the parameters as you would if you were specifying them on an HTTP URL: <code>w</code> for write, <code>dw</code> for durable write, and <code>r</code> for read.<p class="paragraph"/>For example, to ensure that an object has been completely flushed to disk before returning, use the "durable write" parameter:<p class="paragraph"/><div class="code"><pre>def p = <span class="java&#45;keyword">new</span> Person(firstName: <span class="java&#45;quote">"Bob"</span>)
+One of the important features of Riak is that, by default, Riak promises to be <a href="https://blog.basho.com/category/eventual-consistency/" target="blank">&#34;eventually consistent&#34; rather than synchronously up-to-date</a>. This means that when an update to data in Riak is issued, the update method might return before the data has been fully written to disk. This increases performance of writes but means operations that depend on just-inserted data being available (for queries, for example) need to be careful about when they are run.<p class="paragraph"/>If you want a <code>save()</code> call to be guaranteed to have persisted the object to disk before returning to your application, then you need to pass a QOS (Quality of Service) parameter to the entity's <code>save</code> method. You use the same names for the parameters as you would if you were specifying them on an HTTP URL: <code>w</code> for write, <code>dw</code> for durable write, and <code>r</code> for read.<p class="paragraph"/>For example, to ensure that an object has been completely flushed to disk before returning, use the "durable write" parameter:<p class="paragraph"/><div class="code"><pre>def p = <span class="java&#45;keyword">new</span> Person(firstName: <span class="java&#45;quote">"Bob"</span>)
 p.save(&#91;dw: <span class="java&#45;quote">"all"</span>&#93;)</pre></div><p class="paragraph"/>
 
 

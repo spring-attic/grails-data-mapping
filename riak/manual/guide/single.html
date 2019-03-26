@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
         <title>Riak GORM 1.0.0.M4</title>
@@ -129,8 +129,8 @@ Riak is an Internet-scale Key/Value datastore that stores arbitrary data based o
 <h1 id="2. Getting Started">2 Getting Started</h1>
 To get started with GORM for Riak, you need to install the plugin into a Grails application:<p class="paragraph"/><div class="code"><pre>grails install&#45;plugin riak</pre></div><p class="paragraph"/>Now you need to install and configure a Riak server for your architecture. To install Riak, you have several options:
 <ul class="star">
-<li>Use a pre-compiled binary downloaded from the official download page: <a href="http://downloads.basho.com/riak/" target="blank">http://downloads.basho.com/riak/</a></li>
-<li>Install from a package manager like <code>apt</code> or <a href="http://mxcl.github.com/homebrew/" target="blank">Homebrew</a></li>
+<li>Use a pre-compiled binary downloaded from the official download page: <a href="https://downloads.basho.com/riak/" target="blank">https://downloads.basho.com/riak/</a></li>
+<li>Install from a package manager like <code>apt</code> or <a href="https://mxcl.github.com/homebrew/" target="blank">Homebrew</a></li>
 <li>Install the source distribution</li>
 </ul><p class="paragraph"/>Once installed, you can run a Riak server in a terminal and gain access to an Erlang shell by doing the following (assuming Riak is installed to <code>/opt/riak-0.13.0</code>):<p class="paragraph"/><div class="code"><pre>cd /opt/riak&#45;0.13.0
 bin/riak console</pre></div><p class="paragraph"/>When run, you should see something like the following:<p class="paragraph"/><div class="code"><pre>Exec: /opt/riak&#45;0.13.0/erts&#45;5.8.1/bin/erlexec &#45;boot /opt/riak&#45;0.13.0/releases/0.13.0/riak &#45;embedded &#45;config /opt/riak&#45;0.13.0/etc/app.config &#45;args_file /opt/riak&#45;0.13.0/etc/vm.args &#45;&#45; console
@@ -146,7 +146,7 @@ grails.riak.mapReduceUri = <span class="java&#45;quote">"http://localhost:8098/m
 
 
 <h1 id="3. Object Mapping">3 Object Mapping</h1>
-Object mapping works largely as described in the <a href="http://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html" target="blank">documentation on GORM</a>. In general you can continue to model your associations using typical GORM notation such as <code>hasMany</code>, <code>belongsTo</code> and so on.<p class="paragraph"/>Here is an example of a domain class that can be persisted to Riak:<p class="paragraph"/><div class="code"><pre>class Person &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> firstName
+Object mapping works largely as described in the <a href="https://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html" target="blank">documentation on GORM</a>. In general you can continue to model your associations using typical GORM notation such as <code>hasMany</code>, <code>belongsTo</code> and so on.<p class="paragraph"/>Here is an example of a domain class that can be persisted to Riak:<p class="paragraph"/><div class="code"><pre>class Person &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> firstName
     <span class="java&#45;object">String</span> lastName<p class="paragraph"/>    <span class="java&#45;keyword">static</span> constraints = &#123;
         firstName blank:<span class="java&#45;keyword">false</span>
         lastName blank:<span class="java&#45;keyword">false</span>
@@ -156,21 +156,21 @@ Object mapping works largely as described in the <a href="http://grails.org/doc/
 
 
 <h2 id="3.1 Dealing with Eventual Consistency">3.1 Dealing with Eventual Consistency</h2>
-One of the important features of Riak is that, by default, Riak promises to be <a href="http://blog.basho.com/category/eventual-consistency/" target="blank">&#34;eventually consistent&#34; rather than synchronously up-to-date</a>. This means that when an update to data in Riak is issued, the update method might return before the data has been fully written to disk. This increases performance of writes but means operations that depend on just-inserted data being available (for queries, for example) need to be careful about when they are run.<p class="paragraph"/>If you want a <code>save()</code> call to be guaranteed to have persisted the object to disk before returning to your application, then you need to pass a QOS (Quality of Service) parameter to the entity's <code>save</code> method. You use the same names for the parameters as you would if you were specifying them on an HTTP URL: <code>w</code> for write, <code>dw</code> for durable write, and <code>r</code> for read.<p class="paragraph"/>For example, to ensure that an object has been completely flushed to disk before returning, use the "durable write" parameter:<p class="paragraph"/><div class="code"><pre>def p = <span class="java&#45;keyword">new</span> Person(firstName: <span class="java&#45;quote">"Bob"</span>)
+One of the important features of Riak is that, by default, Riak promises to be <a href="https://blog.basho.com/category/eventual-consistency/" target="blank">&#34;eventually consistent&#34; rather than synchronously up-to-date</a>. This means that when an update to data in Riak is issued, the update method might return before the data has been fully written to disk. This increases performance of writes but means operations that depend on just-inserted data being available (for queries, for example) need to be careful about when they are run.<p class="paragraph"/>If you want a <code>save()</code> call to be guaranteed to have persisted the object to disk before returning to your application, then you need to pass a QOS (Quality of Service) parameter to the entity's <code>save</code> method. You use the same names for the parameters as you would if you were specifying them on an HTTP URL: <code>w</code> for write, <code>dw</code> for durable write, and <code>r</code> for read.<p class="paragraph"/>For example, to ensure that an object has been completely flushed to disk before returning, use the "durable write" parameter:<p class="paragraph"/><div class="code"><pre>def p = <span class="java&#45;keyword">new</span> Person(firstName: <span class="java&#45;quote">"Bob"</span>)
 p.save(&#91;dw: <span class="java&#45;quote">"all"</span>&#93;)</pre></div><p class="paragraph"/>
 
 
 <h1 id="4. Querying">4 Querying</h1>
 The Riak GORM module provides several ways to query data that is stored in Riak:
 <ul class="star">
-<li><a href="http://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html#5.4.1%20Dynamic%20Finders" target="blank">Dynamic Finders</a></li>
-<li><a href="http://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html#5.4.2%20Criteria" target="blank">Criteria</a></li>
-<li><a href="http://grails.org/doc/latest/ref/Domain%20Classes/namedQueries.html" target="blank">Named Queries</a></li>
+<li><a href="https://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html#5.4.1%20Dynamic%20Finders" target="blank">Dynamic Finders</a></li>
+<li><a href="https://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html#5.4.2%20Criteria" target="blank">Criteria</a></li>
+<li><a href="https://grails.org/doc/latest/ref/Domain%20Classes/namedQueries.html" target="blank">Named Queries</a></li>
 </ul><p class="paragraph"/>These queries operate in largely the same way as they do with GORM for Hibernate.
 
 
 <h1 id="5. Spring Data Support">5 Spring Data Support</h1>
-The Riak support for GORM is actually built on top of the Riak support for <a href="http://www.springsource.org/spring-data" target="blank">Spring Data</a>. As such, the Riak plugin provides full access to a <code>org.springframework.data.keyvalue.riak.core.RiakTemplate</code> or <code>org.springframework.data.keyvalue.riak.core.AsyncRiakTemplate</code> object you can inject into your own components. The former is for synchronous access to Riak, the latter is for asynchronous access.<p class="paragraph"/>For example, in a controller:<p class="paragraph"/><div class="code"><pre>class MyController &#123;
+The Riak support for GORM is actually built on top of the Riak support for <a href="https://www.springsource.org/spring-data" target="blank">Spring Data</a>. As such, the Riak plugin provides full access to a <code>org.springframework.data.keyvalue.riak.core.RiakTemplate</code> or <code>org.springframework.data.keyvalue.riak.core.AsyncRiakTemplate</code> object you can inject into your own components. The former is for synchronous access to Riak, the latter is for asynchronous access.<p class="paragraph"/>For example, in a controller:<p class="paragraph"/><div class="code"><pre>class MyController &#123;
     def riakTemplate<p class="paragraph"/>    def foo = &#123;
         def notifs = riak.get(<span class="java&#45;quote">"notifications"</span>, <span class="java&#45;quote">"myuser"</span>)
         render <span class="java&#45;quote">"Notifications: &#36;notifs"</span>

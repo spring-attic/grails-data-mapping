@@ -1,4 +1,4 @@
-[Neo4j|http://www.neo4j.org] is (as of now) the only graph database that fits nicely in a Grails application.
+[Neo4j|https://www.neo4j.org] is (as of now) the only graph database that fits nicely in a Grails application.
 
 The goal of this grails-data-mapping subproject is to provide a 'as-complete-as-possible' GORM implemenatition that maps domain classes and instances to the Neo4j nodespace. The following features are supported:
 

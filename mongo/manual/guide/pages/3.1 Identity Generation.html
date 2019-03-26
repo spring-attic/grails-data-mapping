@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>3.1 Identity Generation 1.3.0.GA</title>
@@ -90,9 +90,9 @@ function addJsClass() {
                 
 
 <h2 id="3.1 Identity Generation">3.1 Identity Generation</h2>
-By default in GORM entities are supplied with an integer-based identifier. So for example the following entity:<p class="paragraph"/><div class="code"><pre>class Person &#123;&#125;</pre></div><p class="paragraph"/>Has a property called <code>id</code> of type <code>java.lang.Long</code>. In this case GORM for Mongo will generate a sequence based identifier using the technique <a href="http://www.mongodb.org/display/DOCS/Atomic+Operations" target="blank">described in the Mongo documentation</a> on Atomic operations.<p class="paragraph"/>However, sequence based integer identifiers are not ideal for environments that require <a href="http://www.mongodb.org/display/DOCS/Sharding" target="blank">sharding</a> (one of the nicer features of Mongo). Hence it is generally advised to use either String based ids:<p class="paragraph"/><div class="code"><pre>class Person &#123;
+By default in GORM entities are supplied with an integer-based identifier. So for example the following entity:<p class="paragraph"/><div class="code"><pre>class Person &#123;&#125;</pre></div><p class="paragraph"/>Has a property called <code>id</code> of type <code>java.lang.Long</code>. In this case GORM for Mongo will generate a sequence based identifier using the technique <a href="https://www.mongodb.org/display/DOCS/Atomic+Operations" target="blank">described in the Mongo documentation</a> on Atomic operations.<p class="paragraph"/>However, sequence based integer identifiers are not ideal for environments that require <a href="https://www.mongodb.org/display/DOCS/Sharding" target="blank">sharding</a> (one of the nicer features of Mongo). Hence it is generally advised to use either String based ids:<p class="paragraph"/><div class="code"><pre>class Person &#123;
     <span class="java&#45;object">String</span> id
-&#125;</pre></div><p class="paragraph"/>Or a native BSON <a href="http://api.mongodb.org/java/current/org/bson/types/ObjectId.html" target="blank">ObjectId</a>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> org.bson.types.ObjectId<p class="paragraph"/>class Person &#123;
+&#125;</pre></div><p class="paragraph"/>Or a native BSON <a href="https://api.mongodb.org/java/current/org/bson/types/ObjectId.html" target="blank">ObjectId</a>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> org.bson.types.ObjectId<p class="paragraph"/>class Person &#123;
     ObjectId id
 &#125;</pre></div><p class="paragraph"/>BSON <code>ObjectId</code> instances are generated in a similar fashion to <code>UUIDs</code>.
 

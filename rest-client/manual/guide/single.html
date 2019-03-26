@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
         <title>GORM REST Client 1.0.0.M1</title>
@@ -157,7 +157,7 @@ By default GORM for REST makes all REST calls asynchronously, however it is advi
 	connectTimeout 2000
 &#125;</pre></div><p class="paragraph"/>However, you may want to take control of the asynchronous calls yourself. To do this you can disable internal Async processing:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">static</span> mapping = &#123;
 	async <span class="java&#45;keyword">false</span>
-&#125;</pre></div><p class="paragraph"/>And then simply use <a href="http://grails.org/doc/2.3.x/guide/async.html#asyncGorm" target="blank">Asynchronous GORM</a> to make the calls in a non-blocking fashion:<p class="paragraph"/><div class="code"><pre>Book.async.get(1).onComplete &#123; Book book &#45;&#62;
+&#125;</pre></div><p class="paragraph"/>And then simply use <a href="https://grails.org/doc/2.3.x/guide/async.html#asyncGorm" target="blank">Asynchronous GORM</a> to make the calls in a non-blocking fashion:<p class="paragraph"/><div class="code"><pre>Book.async.get(1).onComplete &#123; Book book &#45;&#62;
   // <span class="java&#45;keyword">do</span> stuff with the book
 &#125;</pre></div><p class="paragraph"/>
 
@@ -165,7 +165,7 @@ By default GORM for REST makes all REST calls asynchronously, however it is advi
 <h1 id="5. Configuration">5 Configuration</h1>
 The following configuration properties are available inside the <code>mapping</code> block of each entity:
 <ul class="star">
-<li><code>httpRequestFactory</code> - The <a href="http://static.springsource.org/spring/docs/current/javadoc-api/org/springframework/http/client/SimpleClientHttpRequestFactory.html" target="blank">SimpleClientHttpRequestFactory</a> to use to make REST calls</li>
+<li><code>httpRequestFactory</code> - The <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/client/SimpleClientHttpRequestFactory.html" target="blank">SimpleClientHttpRequestFactory</a> to use to make REST calls</li>
 <li><code>url</code> - The full URL of the endpoint</li>
 <li><code>uri</code> - The URI of the endpoint relative to the configured base URL (Set using the <code>grails.gorm.restClient.baseUrl</code> setting in Config.groovy)</li>
 <li><code>contentType</code> - The content type of the end point to pass to the Content-Type header when sending requests</li>
@@ -182,7 +182,7 @@ grails.gorm.restClient.<span class="java&#45;keyword">default</span>.mapping = &
 
 
 <h1 id="6. Testing">6 Testing</h1>
-GORM for REST uses Spring's RestTemplate under the covers, so testing can be done with Spring's <a href="http://static.springsource.org/spring/docs/current/javadoc-api/org/springframework/test/web/client/MockRestServiceServer.html" target="blank">MockRestServiceServer</a> API. Example:<p class="paragraph"/><div class="code"><pre>RestTemplate rt = Book.getRestBuilder().restTemplate
+GORM for REST uses Spring's RestTemplate under the covers, so testing can be done with Spring's <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/web/client/MockRestServiceServer.html" target="blank">MockRestServiceServer</a> API. Example:<p class="paragraph"/><div class="code"><pre>RestTemplate rt = Book.getRestBuilder().restTemplate
     <span class="java&#45;keyword">final</span> mockServer = MockRestServiceServer.createServer(rt)
     mockServer.expect(requestTo(<span class="java&#45;quote">"http://localhost:8080/book"</span>))
             .andExpect(method(HttpMethod.GET))

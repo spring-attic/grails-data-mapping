@@ -23,7 +23,7 @@ body {
 
 /* Monospace should be same size as other fonts: this fix was taken from
  *
- *     http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+ *     https://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
  */
 pre, code {
     font-family: "Courier New", monospace, serif;

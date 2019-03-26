@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>3 Mapping Domain Classes with JPA 1.0.0.M1</title>
@@ -79,7 +79,7 @@ function addJsClass() {
                 
 
 <h1 id="3. Mapping Domain Classes with JPA">3 Mapping Domain Classes with JPA</h1>
-The first step to map domain classes is to create a regular domain class:<p class="paragraph"/><div class="code"><pre>grails create&#45;domain&#45;class amazon.Book</pre></div><p class="paragraph"/>To map entities via JPA you can either use standard JPA annotations (See for example the <a href="http://docs.jboss.org/hibernate/annotations/3.5/reference/en/html/entity.html" target="blank">Hibernate documentation on the subject</a>) or you can use standard GORM syntax and use the <code>JpaEntity</code> transformation which transforms GORM entities to JPA entities at the byte code level:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">package</span> amazon<p class="paragraph"/><span class="java&#45;keyword">import</span> grails.gorm.JpaEntity;<p class="paragraph"/>@JpaEntity
+The first step to map domain classes is to create a regular domain class:<p class="paragraph"/><div class="code"><pre>grails create&#45;domain&#45;class amazon.Book</pre></div><p class="paragraph"/>To map entities via JPA you can either use standard JPA annotations (See for example the <a href="https://docs.jboss.org/hibernate/annotations/3.5/reference/en/html/entity.html" target="blank">Hibernate documentation on the subject</a>) or you can use standard GORM syntax and use the <code>JpaEntity</code> transformation which transforms GORM entities to JPA entities at the byte code level:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">package</span> amazon<p class="paragraph"/><span class="java&#45;keyword">import</span> grails.gorm.JpaEntity;<p class="paragraph"/>@JpaEntity
 class Book &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> title
     <span class="java&#45;keyword">static</span> constraints = &#123;
         title blank:<span class="java&#45;keyword">false</span>

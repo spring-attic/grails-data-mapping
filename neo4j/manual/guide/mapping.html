@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>3 Mapping domain classes to Neo4j node space 1.0.0</title>
@@ -88,7 +88,7 @@ function addJsClass() {
 
 <h1 id="mapping">3 Mapping domain classes to Neo4j node space</h1>
 Since the nodespace in Neo4j has no schema as opposed to SQL, there must be some structure applied to map a given
-set of domain classes.<p class="paragraph"/>Starting with <a href="http://api.neo4j.org/current/org/neo4j/graphdb/GraphDatabaseService.html#getReferenceNode()," target="blank">Neo4j's reference node</a>
+set of domain classes.<p class="paragraph"/>Starting with <a href="https://neo4j.com/api_docs/#getReferenceNode()," target="blank">Neo4j's reference node</a>
 each domain class itself is represented by a subreference node. The subreference node has a relationship to the reference node,
 type "SUBREFERENCE". Each instance of this domain class is represented by a node connected to the respective subreference
 node by a relationship of type "INSTANCE".<p class="paragraph"/>All simple properties of a domain instance are mapped to the node's properties. Since a node can only store primitives,

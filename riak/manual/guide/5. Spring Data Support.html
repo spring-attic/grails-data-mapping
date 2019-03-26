@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>5 Spring Data Support 1.0.0.M4</title>
@@ -101,7 +101,7 @@ function addJsClass() {
                 
 
 <h1 id="5. Spring Data Support">5 Spring Data Support</h1>
-The Riak support for GORM is actually built on top of the Riak support for <a href="http://www.springsource.org/spring-data" target="blank">Spring Data</a>. As such, the Riak plugin provides full access to a <code>org.springframework.data.keyvalue.riak.core.RiakTemplate</code> or <code>org.springframework.data.keyvalue.riak.core.AsyncRiakTemplate</code> object you can inject into your own components. The former is for synchronous access to Riak, the latter is for asynchronous access.<p class="paragraph"/>For example, in a controller:<p class="paragraph"/><div class="code"><pre>class MyController &#123;
+The Riak support for GORM is actually built on top of the Riak support for <a href="https://www.springsource.org/spring-data" target="blank">Spring Data</a>. As such, the Riak plugin provides full access to a <code>org.springframework.data.keyvalue.riak.core.RiakTemplate</code> or <code>org.springframework.data.keyvalue.riak.core.AsyncRiakTemplate</code> object you can inject into your own components. The former is for synchronous access to Riak, the latter is for asynchronous access.<p class="paragraph"/>For example, in a controller:<p class="paragraph"/><div class="code"><pre>class MyController &#123;
     def riakTemplate<p class="paragraph"/>    def foo = &#123;
         def notifs = riak.get(<span class="java&#45;quote">"notifications"</span>, <span class="java&#45;quote">"myuser"</span>)
         render <span class="java&#45;quote">"Notifications: &#36;notifs"</span>

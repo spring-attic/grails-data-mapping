@@ -22,10 +22,10 @@ import org.grails.datastore.gorm.neo4j.constraints.UniqueConstraint
 class Neo4jGrailsPlugin {
 
     def license = "WTFPL"
-    def organization = [ name: "Stefan Armbruster", url: "http://blog.armbruster-it.de/" ]
+    def organization = [ name: "Stefan Armbruster", url: "https://blog.armbruster-it.de/" ]
     def developers = [
         [ name: "Stefan Armbruster", email: "stefan@armbruster-it.de" ] ]
-    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPNEO4J" ]
+    def issueManagement = [ system: "JIRA", url: "https://jira.grails.org/browse/GPNEO4J" ]
     def scm = [ url: "https://github.com/sarmbruster/grails-data-mapping" ]
 
     def version = "0.9-SNAPSHOT"
@@ -38,7 +38,7 @@ class Neo4jGrailsPlugin {
     def title = "Neo4j GORM"
     def description = 'A plugin that integrates the Neo4j graph database into Grails, providing a GORM API onto it'
 
-    def documentation = "http://grails.org/plugin/neo4j"
+    def documentation = "https://grails.org/plugin/neo4j"
 
     def dependsOn = [:]
     // resources that are excluded from plugin packaging

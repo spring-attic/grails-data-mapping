@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
         <title>GORM for Mongo 1.3.0.GA</title>
@@ -124,7 +124,7 @@ MongoDB bridges the gap between key-value stores (which are fast and highly scal
 
 
 <h2 id="1.1 Compatibility with GORM for Hibernate">1.1 Compatibility with GORM for Hibernate</h2>
-This implementation tries to be as compatible as possible with GORM for Hibernate. In general you can refer to the <a href="http://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html" target="blank">GORM documentation</a> and the "Domain Classes" section of the <a href="http://grails.org/doc/latest/" target="blank">reference guide</a> (see the left nav) for usage information.<p class="paragraph"/>The following key features are supported by GORM for Mongo:
+This implementation tries to be as compatible as possible with GORM for Hibernate. In general you can refer to the <a href="https://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html" target="blank">GORM documentation</a> and the "Domain Classes" section of the <a href="https://grails.org/doc/latest/" target="blank">reference guide</a> (see the left nav) for usage information.<p class="paragraph"/>The following key features are supported by GORM for Mongo:
 <ul class="star">
 <li>Simple persistence methods</li>
 <li>Dynamic finders</li>
@@ -171,7 +171,7 @@ MongoDB plugin 1.1 GA and above requires Grails 2.0.x as a minimum Grails versio
 <h1 id="2. Getting Started">2 Getting Started</h1>
 To get started with GORM for Mongo you need configure it as a dependency in <code>BuildConfig.groovy</code>:<p class="paragraph"/><div class="code"><pre>plugins &#123;
 	compile ':mongodb:1.2.0' // or whatever is the latest vesrion
-&#125;</pre></div><p class="paragraph"/>With that done you need to set up a running MongoDB server. Refer to the <a href="http://www.mongodb.org/display/DOCS/Quickstart" target="blank">MongoDB Quick Start guide</a> for an explanation on how to startup a Mongo instance. Once installed starting Mongo is typically a matter of executing the following command:<p class="paragraph"/><div class="code"><pre>MONGO_HOME/bin/mongod</pre></div><p class="paragraph"/>With the above commands executed in a terminal window you should see output like the following appear:<p class="paragraph"/><div class="code"><pre>Thu Nov 11 16:54:08 MongoDB starting : pid=4600 port=27017 dbpath=/data/db/ 64&#45;bit
+&#125;</pre></div><p class="paragraph"/>With that done you need to set up a running MongoDB server. Refer to the <a href="https://www.mongodb.org/display/DOCS/Quickstart" target="blank">MongoDB Quick Start guide</a> for an explanation on how to startup a Mongo instance. Once installed starting Mongo is typically a matter of executing the following command:<p class="paragraph"/><div class="code"><pre>MONGO_HOME/bin/mongod</pre></div><p class="paragraph"/>With the above commands executed in a terminal window you should see output like the following appear:<p class="paragraph"/><div class="code"><pre>Thu Nov 11 16:54:08 MongoDB starting : pid=4600 port=27017 dbpath=/data/db/ 64&#45;bit
 Thu Nov 11 16:54:08 db version v1.6.3, pdfile version 4.5
 Thu Nov 11 16:54:08 git version: 278bd2ac2f2efbee556f32c13c1b6803224d1c01
 Thu Nov 11 16:54:08 sys info: Darwin erh2.10gen.cc 9.6.0 Darwin Kernel Version 9.6.0: Mon Nov 24 17:37:00 PST 2008; root:xnu&#45;1228.9.59~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
@@ -213,15 +213,15 @@ If you have both the Hibernate and Mongo plugins installed then by default all c
             connectTimeout = 300
         &#125;
     &#125;
-&#125;</pre></div><p class="paragraph"/>Available options and their descriptions are defined in the <a href="http://api.mongodb.org/java/current/com/mongodb/MongoOptions.html" target="blank">MongoOptions</a> javadoc.<p class="paragraph"/>In production scenarios you will typically use more than one Mongo server in either <a href="http://www.mongodb.org/display/DOCS/Master+Slave" target="blank">master/slave</a> or <a href="http://www.mongodb.org/display/DOCS/Replication" target="blank">replication</a> scenarios. The plugin allows you to configure <a href="http://www.mongodb.org/display/DOCS/Replica+Pairs" target="blank">replica pairs</a>:<p class="paragraph"/><div class="code"><pre>grails &#123;
+&#125;</pre></div><p class="paragraph"/>Available options and their descriptions are defined in the <a href="https://api.mongodb.org/java/current/com/mongodb/MongoOptions.html" target="blank">MongoOptions</a> javadoc.<p class="paragraph"/>In production scenarios you will typically use more than one Mongo server in either <a href="https://www.mongodb.org/display/DOCS/Master+Slave" target="blank">master/slave</a> or <a href="https://www.mongodb.org/display/DOCS/Replication" target="blank">replication</a> scenarios. The plugin allows you to configure <a href="https://www.mongodb.org/display/DOCS/Replica+Pairs" target="blank">replica pairs</a>:<p class="paragraph"/><div class="code"><pre>grails &#123;
     mongo &#123;
         replicaPair = &#91; <span class="java&#45;quote">"localhost:27017"</span>, <span class="java&#45;quote">"localhost:27018"</span>&#93;
     &#125;
-&#125;</pre></div><p class="paragraph"/>Or <a href="http://www.mongodb.org/display/DOCS/Replica+Sets" target="blank">replica sets</a>:<p class="paragraph"/><div class="code"><pre>grails &#123;
+&#125;</pre></div><p class="paragraph"/>Or <a href="https://www.mongodb.org/display/DOCS/Replica+Sets" target="blank">replica sets</a>:<p class="paragraph"/><div class="code"><pre>grails &#123;
     mongo &#123;
         replicaSet = &#91; <span class="java&#45;quote">"localhost:27017"</span>, <span class="java&#45;quote">"localhost:27018"</span>&#93;
     &#125;
-&#125;</pre></div><p class="paragraph"/>The replica sets are defined using a list of strings that conform to the Mongo <a href="http://api.mongodb.org/java/current/com/mongodb/DBAddress.html" target="blank">DBAddress</a> specification.<p class="paragraph"/><h4>Global Mapping Configuration</h4><p class="paragraph"/>Using the <code>grails.mongo.default.mapping</code> setting in <code>Config.groovy</code> you can configure global mapping options across your domain classes. This is useful if, for example, you want to disable optimistic locking globally or you wish to use <code>DBRefs</code> in your association mappings. For example, the following configuration will disable optimistic locking globally and use <code>DBRefs</code> for all properties:<p class="paragraph"/><div class="code"><pre>grails.mongo.<span class="java&#45;keyword">default</span>.mapping = &#123;
+&#125;</pre></div><p class="paragraph"/>The replica sets are defined using a list of strings that conform to the Mongo <a href="https://api.mongodb.org/java/current/com/mongodb/DBAddress.html" target="blank">DBAddress</a> specification.<p class="paragraph"/><h4>Global Mapping Configuration</h4><p class="paragraph"/>Using the <code>grails.mongo.default.mapping</code> setting in <code>Config.groovy</code> you can configure global mapping options across your domain classes. This is useful if, for example, you want to disable optimistic locking globally or you wish to use <code>DBRefs</code> in your association mappings. For example, the following configuration will disable optimistic locking globally and use <code>DBRefs</code> for all properties:<p class="paragraph"/><div class="code"><pre>grails.mongo.<span class="java&#45;keyword">default</span>.mapping = &#123;
     version <span class="java&#45;keyword">false</span>
     '&#42;'(reference:<span class="java&#45;keyword">true</span>)
 &#125;</pre></div><p class="paragraph"/>The <code>*</code> method is used to indicate that the setting applies to all properties.
@@ -233,7 +233,7 @@ If you have both the Hibernate and Mongo plugins installed then by default all c
     <span class="java&#45;object">String</span> firstName
     <span class="java&#45;object">String</span> lastName
     <span class="java&#45;keyword">static</span> hasMany = &#91;pets:Pet&#93;
-&#125;</pre></div><p class="paragraph"/>This will map onto a Mongo <a href="http://api.mongodb.org/java/current/com/mongodb/DBCollection.html" target="blank">DBCollection</a> called "person".<p class="paragraph"/><h4>Embedded Documents</h4><p class="paragraph"/>It is quite common in Mongo to embed documents within documents (nested documents). This can be done with GORM embedded types:<p class="paragraph"/><div class="code"><pre>class Person &#123;
+&#125;</pre></div><p class="paragraph"/>This will map onto a Mongo <a href="https://api.mongodb.org/java/current/com/mongodb/DBCollection.html" target="blank">DBCollection</a> called "person".<p class="paragraph"/><h4>Embedded Documents</h4><p class="paragraph"/>It is quite common in Mongo to embed documents within documents (nested documents). This can be done with GORM embedded types:<p class="paragraph"/><div class="code"><pre>class Person &#123;
     <span class="java&#45;object">String</span> firstName
     <span class="java&#45;object">String</span> lastName
     Address address
@@ -258,7 +258,7 @@ If you have both the Hibernate and Mongo plugins installed then by default all c
     <span class="java&#45;keyword">static</span> mapping = &#123;
         firstName attr:<span class="java&#45;quote">"first_name"</span>
     &#125;
-&#125;</pre></div><p class="paragraph"/>For non-embedded associations by default GORM for MongoDB will map links between documents using MongoDB <a href="http://www.mongodb.org/display/DOCS/Database+References" target="blank">database references</a> also known as <code>DBRefs</code>.<p class="paragraph"/>If you prefer not to use DBRefs then you tell GORM to use direct links by using the <code>reference:false</code> mapping:<p class="paragraph"/><div class="code"><pre>class Person &#123;
+&#125;</pre></div><p class="paragraph"/>For non-embedded associations by default GORM for MongoDB will map links between documents using MongoDB <a href="https://www.mongodb.org/display/DOCS/Database+References" target="blank">database references</a> also known as <code>DBRefs</code>.<p class="paragraph"/>If you prefer not to use DBRefs then you tell GORM to use direct links by using the <code>reference:false</code> mapping:<p class="paragraph"/><div class="code"><pre>class Person &#123;
     ..
     <span class="java&#45;keyword">static</span> mapping = &#123;
         address reference:<span class="java&#45;keyword">false</span>
@@ -268,9 +268,9 @@ If you have both the Hibernate and Mongo plugins installed then by default all c
 
 
 <h2 id="3.1 Identity Generation">3.1 Identity Generation</h2>
-By default in GORM entities are supplied with an integer-based identifier. So for example the following entity:<p class="paragraph"/><div class="code"><pre>class Person &#123;&#125;</pre></div><p class="paragraph"/>Has a property called <code>id</code> of type <code>java.lang.Long</code>. In this case GORM for Mongo will generate a sequence based identifier using the technique <a href="http://www.mongodb.org/display/DOCS/Atomic+Operations" target="blank">described in the Mongo documentation</a> on Atomic operations.<p class="paragraph"/>However, sequence based integer identifiers are not ideal for environments that require <a href="http://www.mongodb.org/display/DOCS/Sharding" target="blank">sharding</a> (one of the nicer features of Mongo). Hence it is generally advised to use either String based ids:<p class="paragraph"/><div class="code"><pre>class Person &#123;
+By default in GORM entities are supplied with an integer-based identifier. So for example the following entity:<p class="paragraph"/><div class="code"><pre>class Person &#123;&#125;</pre></div><p class="paragraph"/>Has a property called <code>id</code> of type <code>java.lang.Long</code>. In this case GORM for Mongo will generate a sequence based identifier using the technique <a href="https://www.mongodb.org/display/DOCS/Atomic+Operations" target="blank">described in the Mongo documentation</a> on Atomic operations.<p class="paragraph"/>However, sequence based integer identifiers are not ideal for environments that require <a href="https://www.mongodb.org/display/DOCS/Sharding" target="blank">sharding</a> (one of the nicer features of Mongo). Hence it is generally advised to use either String based ids:<p class="paragraph"/><div class="code"><pre>class Person &#123;
     <span class="java&#45;object">String</span> id
-&#125;</pre></div><p class="paragraph"/>Or a native BSON <a href="http://api.mongodb.org/java/current/org/bson/types/ObjectId.html" target="blank">ObjectId</a>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> org.bson.types.ObjectId<p class="paragraph"/>class Person &#123;
+&#125;</pre></div><p class="paragraph"/>Or a native BSON <a href="https://api.mongodb.org/java/current/org/bson/types/ObjectId.html" target="blank">ObjectId</a>:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> org.bson.types.ObjectId<p class="paragraph"/>class Person &#123;
     ObjectId id
 &#125;</pre></div><p class="paragraph"/>BSON <code>ObjectId</code> instances are generated in a similar fashion to <code>UUIDs</code>.
 
@@ -286,10 +286,10 @@ By default in GORM entities are supplied with an integer-based identifier. So fo
     <span class="java&#45;keyword">static</span> mapping = &#123;
         name index:<span class="java&#45;keyword">true</span>, indexAttributes: &#91;unique:<span class="java&#45;keyword">true</span>, dropDups:<span class="java&#45;keyword">true</span>&#93;
     &#125;
-&#125;</pre></div><p class="paragraph"/>You can use MongoDB <a href="http://www.mongodb.org/display/DOCS/Optimization#Optimization-Hint" target="blank">Query Hints</a> by passing the <code>hint</code> argument to any dynamic finder:<p class="paragraph"/><div class="code"><pre>def people = Person.findByName(<span class="java&#45;quote">"Bob"</span>, &#91;hint:&#91;name:1&#93;&#93;)</pre></div><p class="paragraph"/>Or in a criteria query using the query "arguments" method<p class="paragraph"/><div class="code"><pre>Person.withCriteria &#123;
+&#125;</pre></div><p class="paragraph"/>You can use MongoDB <a href="https://www.mongodb.org/display/DOCS/Optimization#Optimization-Hint" target="blank">Query Hints</a> by passing the <code>hint</code> argument to any dynamic finder:<p class="paragraph"/><div class="code"><pre>def people = Person.findByName(<span class="java&#45;quote">"Bob"</span>, &#91;hint:&#91;name:1&#93;&#93;)</pre></div><p class="paragraph"/>Or in a criteria query using the query "arguments" method<p class="paragraph"/><div class="code"><pre>Person.withCriteria &#123;
 	eq 'firstName', 'Bob'
     arguments hint:&#91;<span class="java&#45;quote">"firstName"</span>:1&#93;
-&#125;</pre></div><p class="paragraph"/><h4>Compound Indices</h4><p class="paragraph"/>MongoDB supports the notion of <a href="http://www.mongodb.org/display/DOCS/Indexes#Indexes-CompoundKeys" target="blank">compound keys</a>. GORM for MongoDB enables this feature at the mapping level using the <code>compoundIndex</code> mapping:<p class="paragraph"/><div class="code"><pre>class Person &#123;
+&#125;</pre></div><p class="paragraph"/><h4>Compound Indices</h4><p class="paragraph"/>MongoDB supports the notion of <a href="https://www.mongodb.org/display/DOCS/Indexes#Indexes-CompoundKeys" target="blank">compound keys</a>. GORM for MongoDB enables this feature at the mapping level using the <code>compoundIndex</code> mapping:<p class="paragraph"/><div class="code"><pre>class Person &#123;
     &#8230;
     <span class="java&#45;keyword">static</span> mapping = &#123;
         compoundIndex name:1, age:&#45;1
@@ -298,7 +298,7 @@ By default in GORM entities are supplied with an integer-based identifier. So fo
 
 
 <h2 id="3.3 Customizing the WriteConcern">3.3 Customizing the WriteConcern</h2>
-A feature of Mongo is its ability to customize how important a database write is to the user. The Java client models this as a <a href="http://api.mongodb.org/java/current/com/mongodb/WriteConcern.html" target="blank">WriteConcern</a> and there are various options that indicate whether the client cares about server or network errors, or whether the data has been successfully written or not.<p class="paragraph"/>If you wish to customize the <code>WriteConcern</code> for a domain class you can do so in the mapping block:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> com.mongodb.WriteConcern<p class="paragraph"/>class Person &#123;
+A feature of Mongo is its ability to customize how important a database write is to the user. The Java client models this as a <a href="https://api.mongodb.org/java/current/com/mongodb/WriteConcern.html" target="blank">WriteConcern</a> and there are various options that indicate whether the client cares about server or network errors, or whether the data has been successfully written or not.<p class="paragraph"/>If you wish to customize the <code>WriteConcern</code> for a domain class you can do so in the mapping block:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> com.mongodb.WriteConcern<p class="paragraph"/>class Person &#123;
     <span class="java&#45;object">String</span> name
     <span class="java&#45;keyword">static</span> mapping = &#123;
         writeConcern WriteConcern.FSYNC_SAFE
@@ -328,7 +328,7 @@ In addition to storing dynamic attributes, as of version 1.3.0 of the plugin you
 
 
 <h2 id="3.6 Geospacial Querying">3.6 Geospacial Querying</h2>
-It is possible to use Mongo's <a href="http://www.mongodb.org/display/DOCS/Geospatial+Indexing" target="blank">Geospacial querying</a> capability by mapping a list or map property using the <code>geoIndex</code> mapping:<p class="paragraph"/><div class="code"><pre>class Hotel &#123;
+It is possible to use Mongo's <a href="https://www.mongodb.org/display/DOCS/Geospatial+Indexing" target="blank">Geospacial querying</a> capability by mapping a list or map property using the <code>geoIndex</code> mapping:<p class="paragraph"/><div class="code"><pre>class Hotel &#123;
     <span class="java&#45;object">String</span> name
     List location<p class="paragraph"/>    <span class="java&#45;keyword">static</span> mapping = &#123;
         location geoIndex:<span class="java&#45;keyword">true</span>
@@ -476,8 +476,8 @@ b.insert()</pre></div><p class="paragraph"/>In the above case we use the explici
 
 
 <h1 id="4. Low-level API">4 Low-level API</h1>
-A lower level API is provided by the plugin that is based on the <a href="http://github.com/poiati/gmongo" target="blank">GMongo</a> project.<p class="paragraph"/>GMongo is a simple Groovy wrapper around the regular <a href="http://www.mongodb.org/display/DOCS/Java+Language+Center" target="blank">Mongo Java Driver</a>. In general you can refer to the Mongo Java Drivers <a href="http://api.mongodb.org/java/current/index.html" target="blank">Javadoc API</a> when using GMongo.<p class="paragraph"/>GMongo provides some nice enhancements like easy access to collections using the dot operator and support for Groovy operator overloading.<p class="paragraph"/><blockquote class="note">
-There is an excellent tutorial on how to use the Mongo Java driver's API directly in the <a href="http://www.mongodb.org/display/DOCS/Java+Tutorial" target="blank">Mongo documentation</a>
+A lower level API is provided by the plugin that is based on the <a href="https://github.com/poiati/gmongo" target="blank">GMongo</a> project.<p class="paragraph"/>GMongo is a simple Groovy wrapper around the regular <a href="https://www.mongodb.org/display/DOCS/Java+Language+Center" target="blank">Mongo Java Driver</a>. In general you can refer to the Mongo Java Drivers <a href="https://api.mongodb.org/java/current/index.html" target="blank">Javadoc API</a> when using GMongo.<p class="paragraph"/>GMongo provides some nice enhancements like easy access to collections using the dot operator and support for Groovy operator overloading.<p class="paragraph"/><blockquote class="note">
+There is an excellent tutorial on how to use the Mongo Java driver's API directly in the <a href="https://www.mongodb.org/display/DOCS/Java+Tutorial" target="blank">Mongo documentation</a>
 </blockquote><p class="paragraph"/>An example of GMongo usage can be seen below:<p class="paragraph"/><div class="code"><pre>// Get a db reference in the old fashion way
 def db = mongo.getDB(<span class="java&#45;quote">"gmongo"</span>)<p class="paragraph"/>// Collections can be accessed as a db property (like the javascript API)
 assert db.myCollection <span class="java&#45;keyword">instanceof</span> com.mongodb.DBCollection
@@ -489,7 +489,7 @@ db.languages.insert(name: 'Ruby')
 // Yet another way
 db.languages &#60;&#60; &#91;name: 'Python'&#93;<p class="paragraph"/>// Insert a list of documents
 db.languages &#60;&#60; &#91;&#91;name: 'Javascript', type: 'prototyped'&#93;, &#91;name: 'Ioke', type: 'prototyped'&#93;&#93;</pre></div><p class="paragraph"/>
-To get hold of the <code>mongo</code> instance (which is an of the <a href="http://api.mongodb.org/java/current/com/mongodb/Mongo.html" target="blank">com.mongodb.Mongo</a> class) inside a controller or service simple define a <code>mongo</code> property:<p class="paragraph"/><div class="code"><pre>def mongo
+To get hold of the <code>mongo</code> instance (which is an of the <a href="https://api.mongodb.org/java/current/com/mongodb/Mongo.html" target="blank">com.mongodb.Mongo</a> class) inside a controller or service simple define a <code>mongo</code> property:<p class="paragraph"/><div class="code"><pre>def mongo
 def myAction = &#123;
     def db = mongo.getDB(<span class="java&#45;quote">"mongo"</span>)
     db.languages.insert(&#91;name: 'Groovy'&#93;)
@@ -507,7 +507,7 @@ Mongo doesn't support transactions directly, however GORM for Mongo does batch u
     <span class="java&#45;keyword">new</span> Person(name:<span class="java&#45;quote">"Bob"</span>, age:50).save()
     <span class="java&#45;keyword">throw</span> <span class="java&#45;keyword">new</span> RuntimeException(<span class="java&#45;quote">"bad"</span>)
     <span class="java&#45;keyword">new</span> Person(name:<span class="java&#45;quote">"Fred"</span>, age:45).save()
-&#125;</pre></div><p class="paragraph"/>For example in this case neither <code>Person</code> object will be persisted to the database, because underneath the surface a persistence session is being used to batch up both insert operations into a single insert. When the exception is thrown neither insert is ever executed, hence we allow for some transactional semantics are the GORM-level.<p class="paragraph"/>Using the lower level API you can of course also take advantage of Mongo's support for <a href="http://www.mongodb.org/display/DOCS/Atomic+Operations" target="blank">Atomic operations</a>.
+&#125;</pre></div><p class="paragraph"/>For example in this case neither <code>Person</code> object will be persisted to the database, because underneath the surface a persistence session is being used to batch up both insert operations into a single insert. When the exception is thrown neither insert is ever executed, hence we allow for some transactional semantics are the GORM-level.<p class="paragraph"/>Using the lower level API you can of course also take advantage of Mongo's support for <a href="https://www.mongodb.org/display/DOCS/Atomic+Operations" target="blank">Atomic operations</a>.
 
 
 

@@ -1,4 +1,4 @@
-Object mapping works largely as described in the [documentation on GORM|http://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html]. In general you can continue to model your associations using typical GORM notation such as @hasMany@, @belongsTo@ and so on.
+Object mapping works largely as described in the [documentation on GORM|https://grails.org/doc/latest/guide/5.%20Object%20Relational%20Mapping%20(GORM).html]. In general you can continue to model your associations using typical GORM notation such as @hasMany@, @belongsTo@ and so on.
 
 Here is an example of a domain class that can be persisted to Riak:
 

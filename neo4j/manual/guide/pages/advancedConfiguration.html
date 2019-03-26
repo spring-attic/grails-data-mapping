@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>2.3 Advanced Configuration 1.0.0</title>
@@ -103,21 +103,21 @@ Runs the Neo4j in embedded mode, Neo4j and Tomcat use the same JVM. No seperate 
 &#125;</pre></div><p class="paragraph"/><blockquote class="note">
 If your configuration is empty, 'embedded' is used as default.
 </blockquote><p class="paragraph"/><h4>type = "rest"</h4>
-Uses a <code>org.neo4j.rest.graphdb.RestGraphDatabase</code> instance to connect to a Neo4j database. See <a href="http://docs.neo4j.org/chunked/stable/server.html" target="blank">http://docs.neo4j.org/chunked/stable/server.html</a> for how to setup a Neo4j server.<p class="paragraph"/><code>location</code> specifies the URL of he Neo4j REST server. When using the Heroku neo4j addon, omit the location. In this case location will default to env.NEO4J_URL that is provided by Heroku.<p class="paragraph"/>Example:
+Uses a <code>org.neo4j.rest.graphdb.RestGraphDatabase</code> instance to connect to a Neo4j database. See <a href="https://docs.neo4j.org/chunked/stable/server.html" target="blank">https://docs.neo4j.org/chunked/stable/server.html</a> for how to setup a Neo4j server.<p class="paragraph"/><code>location</code> specifies the URL of he Neo4j REST server. When using the Heroku neo4j addon, omit the location. In this case location will default to env.NEO4J_URL that is provided by Heroku.<p class="paragraph"/>Example:
 <div class="code"><pre>grails &#123;
     neo4j &#123;
         type = <span class="java&#45;quote">"<span class="java&#45;keyword">rest</span>"</span>
         location = <span class="java&#45;quote">"http://localhost:7474/db/data/"</span>
     &#125;
 &#125;</pre></div><p class="paragraph"/>Additionally you must add another dependency to your application's <code>grails-app/conf/BuildConfig.groovy</code>:<p class="paragraph"/><div class="code"><pre>compile(<span class="java&#45;quote">"org.neo4j:neo4j&#45;<span class="java&#45;keyword">rest</span>&#45;graphdb:1.6"</span>)</pre></div><p class="paragraph"/><h4>type = "ha"</h4>
-Uses a Neo4j HA setup, for details see <a href="http://docs.neo4j.org/chunked/stable/ha.html" target="blank">http://docs.neo4j.org/chunked/stable/ha.html</a>. In this case params must at least contain<p class="paragraph"/><blockquote class="note">
-For Neo4j HA either a commercial license is <a href="http://neo4j.org/licensing-guide/" target="blank">required</a>, or you could use AGPL.
+Uses a Neo4j HA setup, for details see <a href="https://docs.neo4j.org/chunked/stable/ha.html" target="blank">https://docs.neo4j.org/chunked/stable/ha.html</a>. In this case params must at least contain<p class="paragraph"/><blockquote class="note">
+For Neo4j HA either a commercial license is <a href="https://neo4j.com/licensing-guide/" target="blank">required</a>, or you could use AGPL.
 </blockquote><p class="paragraph"/>Example:
 <div class="code"><pre>grails &#123;
     neo4j &#123;
         type = <span class="java&#45;quote">"ha"</span>
         location = <span class="java&#45;quote">"/<span class="java&#45;keyword">var</span>/neo4j"</span>
-        params = &#91; // see http://docs.neo4j.org/chunked/stable/ha&#45;configuration.html
+        params = &#91; // see https://docs.neo4j.org/chunked/stable/ha&#45;configuration.html
                 'ha.server_id': 1,
                 'ha.coordinators': 'localhost:2181,localhost:2182,localhost:2183'
         &#93;

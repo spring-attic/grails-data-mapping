@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>3.2 Indexing Queries 1.3.0.GA</title>
@@ -100,10 +100,10 @@ function addJsClass() {
     <span class="java&#45;keyword">static</span> mapping = &#123;
         name index:<span class="java&#45;keyword">true</span>, indexAttributes: &#91;unique:<span class="java&#45;keyword">true</span>, dropDups:<span class="java&#45;keyword">true</span>&#93;
     &#125;
-&#125;</pre></div><p class="paragraph"/>You can use MongoDB <a href="http://www.mongodb.org/display/DOCS/Optimization#Optimization-Hint" target="blank">Query Hints</a> by passing the <code>hint</code> argument to any dynamic finder:<p class="paragraph"/><div class="code"><pre>def people = Person.findByName(<span class="java&#45;quote">"Bob"</span>, &#91;hint:&#91;name:1&#93;&#93;)</pre></div><p class="paragraph"/>Or in a criteria query using the query "arguments" method<p class="paragraph"/><div class="code"><pre>Person.withCriteria &#123;
+&#125;</pre></div><p class="paragraph"/>You can use MongoDB <a href="https://www.mongodb.org/display/DOCS/Optimization#Optimization-Hint" target="blank">Query Hints</a> by passing the <code>hint</code> argument to any dynamic finder:<p class="paragraph"/><div class="code"><pre>def people = Person.findByName(<span class="java&#45;quote">"Bob"</span>, &#91;hint:&#91;name:1&#93;&#93;)</pre></div><p class="paragraph"/>Or in a criteria query using the query "arguments" method<p class="paragraph"/><div class="code"><pre>Person.withCriteria &#123;
 	eq 'firstName', 'Bob'
     arguments hint:&#91;<span class="java&#45;quote">"firstName"</span>:1&#93;
-&#125;</pre></div><p class="paragraph"/><h4>Compound Indices</h4><p class="paragraph"/>MongoDB supports the notion of <a href="http://www.mongodb.org/display/DOCS/Indexes#Indexes-CompoundKeys" target="blank">compound keys</a>. GORM for MongoDB enables this feature at the mapping level using the <code>compoundIndex</code> mapping:<p class="paragraph"/><div class="code"><pre>class Person &#123;
+&#125;</pre></div><p class="paragraph"/><h4>Compound Indices</h4><p class="paragraph"/>MongoDB supports the notion of <a href="https://www.mongodb.org/display/DOCS/Indexes#Indexes-CompoundKeys" target="blank">compound keys</a>. GORM for MongoDB enables this feature at the mapping level using the <code>compoundIndex</code> mapping:<p class="paragraph"/><div class="code"><pre>class Person &#123;
     &#8230;
     <span class="java&#45;keyword">static</span> mapping = &#123;
         compoundIndex name:1, age:&#45;1

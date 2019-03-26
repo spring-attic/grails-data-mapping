@@ -53,7 +53,7 @@ customizable performance tweaks according to SimpleDB best practices (dedicated 
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/simpledb"
+    def documentation = "https://grails.org/plugin/simpledb"
 
     def doWithSpring = {
         def simpleDBConfig = application.config?.grails?.simpleDB

@@ -13,7 +13,7 @@ grails.project.dependency.resolution = {
     def version = "1.0.0.M7"
 
     repositories {
-        mavenRepo "http://repo.grails.org/grails/core"
+        mavenRepo "https://repo.grails.org/grails/core"
         mavenCentral()
         grailsCentral()
     }

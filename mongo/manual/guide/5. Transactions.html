@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>5 Transactions 1.3.0.GA</title>
@@ -94,7 +94,7 @@ Mongo doesn't support transactions directly, however GORM for Mongo does batch u
     <span class="java&#45;keyword">new</span> Person(name:<span class="java&#45;quote">"Bob"</span>, age:50).save()
     <span class="java&#45;keyword">throw</span> <span class="java&#45;keyword">new</span> RuntimeException(<span class="java&#45;quote">"bad"</span>)
     <span class="java&#45;keyword">new</span> Person(name:<span class="java&#45;quote">"Fred"</span>, age:45).save()
-&#125;</pre></div><p class="paragraph"/>For example in this case neither <code>Person</code> object will be persisted to the database, because underneath the surface a persistence session is being used to batch up both insert operations into a single insert. When the exception is thrown neither insert is ever executed, hence we allow for some transactional semantics are the GORM-level.<p class="paragraph"/>Using the lower level API you can of course also take advantage of Mongo's support for <a href="http://www.mongodb.org/display/DOCS/Atomic+Operations" target="blank">Atomic operations</a>.
+&#125;</pre></div><p class="paragraph"/>For example in this case neither <code>Person</code> object will be persisted to the database, because underneath the surface a persistence session is being used to batch up both insert operations into a single insert. When the exception is thrown neither insert is ever executed, hence we allow for some transactional semantics are the GORM-level.<p class="paragraph"/>Using the lower level API you can of course also take advantage of Mongo's support for <a href="https://www.mongodb.org/display/DOCS/Atomic+Operations" target="blank">Atomic operations</a>.
 
 
 

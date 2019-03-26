@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 /**
  * Utilities for creating Time based UUIDs for Cassandra
  *
- * Credit: http://blog.matygo.com/post/587641394/time-uuids-with-java-cassandra
+ * Credit: https://www.hugedomains.com/domain_profile.cfm?d=matygo&e=com
  *
  * @author Graeme Rocher
  * @since 1.0

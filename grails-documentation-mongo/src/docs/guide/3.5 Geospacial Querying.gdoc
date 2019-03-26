@@ -1,4 +1,4 @@
-It is possible to use Mongo's [Geospacial querying|http://www.mongodb.org/display/DOCS/Geospatial+Indexing] capability by mapping a list or map property using the @geoIndex@ mapping:
+It is possible to use Mongo's [Geospacial querying|https://www.mongodb.org/display/DOCS/Geospatial+Indexing] capability by mapping a list or map property using the @geoIndex@ mapping:
 
 {code}
 class Hotel {

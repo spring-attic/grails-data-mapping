@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
         <title>GORM Datastore API 1.0.0</title>
@@ -113,7 +113,7 @@ This documentation describes the GORM API mechanics and how a datastore implemen
 
 <h1 id="2. Getting Started">2 Getting Started</h1>
 <h3>Checking out and Building </h3><p class="paragraph"/>The project is currently hosted on Github at https://github.com/SpringSource/grails-data-mapping.<p class="paragraph"/>You are free to fork the project from there or clone it anonymously using git:<p class="paragraph"/><div class="code"><pre>git clone git@github.com:SpringSource/grails&#45;data&#45;mapping.git
-cd grails&#45;data&#45;mapping</pre></div><p class="paragraph"/>The project has a <a href="http://gradle.org" target="blank">Gradle</a> build. You can generate Eclipse or Intellij project files to open the project using:<p class="paragraph"/><div class="code"><pre>./gradlew eclipse</pre></div><p class="paragraph"/>Or<p class="paragraph"/><div class="code"><pre>./gradlew idea</pre></div><p class="paragraph"/>Once this is done your can import the project into Eclipse, or in the case of Intellij open up the generated <code>grails-data-mapping.ipr</code> file.<p class="paragraph"/><blockquote class="note">
+cd grails&#45;data&#45;mapping</pre></div><p class="paragraph"/>The project has a <a href="https://gradle.org" target="blank">Gradle</a> build. You can generate Eclipse or Intellij project files to open the project using:<p class="paragraph"/><div class="code"><pre>./gradlew eclipse</pre></div><p class="paragraph"/>Or<p class="paragraph"/><div class="code"><pre>./gradlew idea</pre></div><p class="paragraph"/>Once this is done your can import the project into Eclipse, or in the case of Intellij open up the generated <code>grails-data-mapping.ipr</code> file.<p class="paragraph"/><blockquote class="note">
 The version of Gradle used has a bug whereby a subproject is generated for the root directory called "grails-data-mapping". You should remove this subproject from your Intellij Modules or delete it it from Eclipse.
 </blockquote><p class="paragraph"/>To build the project you can run the <code>assemble</code> task:<p class="paragraph"/><div class="code"><pre>./gradlew assemble</pre></div><p class="paragraph"/>To install the jar files for the various subprojects into your local Maven repository you can run:<p class="paragraph"/><div class="code"><pre>./gradlew install</pre></div><p class="paragraph"/>To build all of the documentation run the command:<p class="paragraph"/><div class="code"><pre>./gradlew allDocs</pre></div><p class="paragraph"/>Documentation will produced in the <code>build/docs</code> directory.<p class="paragraph"/><blockquote class="note">
 If you experience PermGen errors when building documentation you may need to increase the JVM permgen inside GRADLE_OPTS
@@ -126,13 +126,13 @@ If you experience PermGen errors when building documentation you may need to inc
 <li><code>grails-datastore-web</code> - Classes required to integrate GORM into a web tier</li>
 </ul><p class="paragraph"/>Beyond these core subprojects there are implementations for various datastores. For example:
 <ul class="star">
-<li><code>grails-datastore-gemfire/grails-datastore-gorm-gemfire</code> - GORM for Gemfire project <a href="http://grails.org/plugin/gemfire" target="blank"></a></li>
-<li><code>grails-datastore-jpa/grails-datastore-gorm-jpa</code> - GORM for JPA project <a href="http://grails.org/plugin/gorm-jpa" target="blank"></a></li>
-<li><code>grails-datastore-mongo/grails-datastore-gorm-mongo</code> - GORM for MongoDB project <a href="http://grails.org/plugin/mongodb" target="blank"></a></li>
-<li><code>grails-datastore-neo4j</code> - GORM for Neo4j project <a href="http://grails.org/plugin/neo4j" target="blank"></a></li>
-<li><code>grails-datastore-redis/grails-datastore-gorm-redis</code> - GORM for Redis project <a href="http://grails.org/plugin/redis" target="blank"></a></li>
-<li><code>grails-datastore-riak/grails-datastore-gorm-riak</code> - GORM for Riak project <a href="http://grails.org/plugin/riak" target="blank"></a></li>
-<li><code>grails-datastore-simpledb/grails-datastore-gorm-simpledb</code> - GORM for SimpleDB project <a href="http://grails.org/plugin/simpledb" target="blank"></a></li>
+<li><code>grails-datastore-gemfire/grails-datastore-gorm-gemfire</code> - GORM for Gemfire project <a href="https://grails.org/plugin/gemfire" target="blank"></a></li>
+<li><code>grails-datastore-jpa/grails-datastore-gorm-jpa</code> - GORM for JPA project <a href="https://grails.org/plugin/gorm-jpa" target="blank"></a></li>
+<li><code>grails-datastore-mongo/grails-datastore-gorm-mongo</code> - GORM for MongoDB project <a href="https://grails.org/plugin/mongodb" target="blank"></a></li>
+<li><code>grails-datastore-neo4j</code> - GORM for Neo4j project <a href="https://grails.org/plugin/neo4j" target="blank"></a></li>
+<li><code>grails-datastore-redis/grails-datastore-gorm-redis</code> - GORM for Redis project <a href="https://grails.org/plugin/redis" target="blank"></a></li>
+<li><code>grails-datastore-riak/grails-datastore-gorm-riak</code> - GORM for Riak project <a href="https://grails.org/plugin/riak" target="blank"></a></li>
+<li><code>grails-datastore-simpledb/grails-datastore-gorm-simpledb</code> - GORM for SimpleDB project <a href="https://grails.org/plugin/simpledb" target="blank"></a></li>
 </ul><p class="paragraph"/>Some implementations are split into 2 subprojects others are not. It depends whether the author chooses to divide the Java parts and the Groovy parts of the project implementation. It is not a requirement to do so.<p class="paragraph"/>The documentation for each implementation is kept in the documentation subprojects that start with <code>grails-documentation</code>. There are documentation projects for the core API, MongoDB, Neo4j, Redis, Riak and Amazon SimpleDB.<p class="paragraph"/>Finally the Grails plugins that are used to distribute the GORM implementations to end users can be found in the <code>grails-plugins</code> directory.<p class="paragraph"/><p class="paragraph"/>
 
 

@@ -4,9 +4,9 @@ By default in GORM entities are supplied with an integer-based identifier. So fo
 class Person {}
 {code}
 
-Has a property called @id@ of type @java.lang.Long@. In this case GORM for Mongo will generate a sequence based identifier using the technique [described in the Mongo documentation|http://www.mongodb.org/display/DOCS/Atomic+Operations] on Atomic operations.
+Has a property called @id@ of type @java.lang.Long@. In this case GORM for Mongo will generate a sequence based identifier using the technique [described in the Mongo documentation|https://www.mongodb.org/display/DOCS/Atomic+Operations] on Atomic operations.
 
-However, sequence based integer identifiers are not ideal for environments that require [sharding|http://www.mongodb.org/display/DOCS/Sharding] (one of the nicer features of Mongo). Hence it is generally advised to use either String based ids:
+However, sequence based integer identifiers are not ideal for environments that require [sharding|https://www.mongodb.org/display/DOCS/Sharding] (one of the nicer features of Mongo). Hence it is generally advised to use either String based ids:
 
 {code}
 class Person {
@@ -14,7 +14,7 @@ class Person {
 }
 {code}
 
-Or a native BSON [ObjectId|http://api.mongodb.org/java/current/org/bson/types/ObjectId.html]:
+Or a native BSON [ObjectId|https://api.mongodb.org/java/current/org/bson/types/ObjectId.html]:
 
 {code}
 import org.bson.types.ObjectId

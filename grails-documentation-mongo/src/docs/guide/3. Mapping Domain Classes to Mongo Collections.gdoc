@@ -8,7 +8,7 @@ class Person {
 }
 {code}
 
-This will map onto a Mongo [DBCollection|http://api.mongodb.org/java/current/com/mongodb/DBCollection.html] called "person".
+This will map onto a Mongo [DBCollection|https://api.mongodb.org/java/current/com/mongodb/DBCollection.html] called "person".
 
 It is quite common in Mongo to embed documents within documents (nested documents). This can be done with GORM embedded types:
 

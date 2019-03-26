@@ -20,4 +20,4 @@ def foo = {
 
 h2. Description
 
-See the [GMongo|https://github.com/poiati/gmongo] docs and the API for [Mongo Java Driver|http://api.mongodb.org/java/current/] for API usage info.
+See the [GMongo|https://github.com/poiati/gmongo] docs and the API for [Mongo Java Driver|https://api.mongodb.org/java/current/] for API usage info.

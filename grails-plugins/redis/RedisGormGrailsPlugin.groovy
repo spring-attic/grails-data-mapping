@@ -44,10 +44,10 @@ import org.grails.plugins.redis.PersistenceContextInterceptorAggregator
 
 class RedisGormGrailsPlugin {
     def license = "Apache 2.0 License"
-    def organization = [ name: "SpringSource", url: "http://www.springsource.org/" ]
+    def organization = [ name: "SpringSource", url: "https://www.springsource.org/" ]
     def developers = [
         [ name: "Graeme Rocher", email: "grocher@vmware.com" ] ]
-    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPREDIS" ]
+    def issueManagement = [ system: "JIRA", url: "https://jira.grails.org/browse/GPREDIS" ]
     def scm = [ url: "https://github.com/SpringSource/grails-data-mapping" ]
 
     def version = "1.0.0.M7"
@@ -69,7 +69,7 @@ a GORM-like API onto it
         "grails-app/controllers/*.groovy"
     ]
 
-    def documentation = "http://grails.org/plugin/redis"
+    def documentation = "https://grails.org/plugin/redis"
 
     def doWithSpring = {
         def redisConfig = application.config?.grails?.redis

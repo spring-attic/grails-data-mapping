@@ -12,7 +12,7 @@ import java.io.File;
 
 /**
  * Base test case class for datastore tests taken from the
- * <a href="http://code.google.com/intl/fr/appengine/docs/java/howto/unittesting.html">Google App Engine testing documentation</a>.
+ * <a href="https://code.google.com/intl/fr/appengine/docs/java/howto/unittesting.html">Google App Engine testing documentation</a>.
  *
  * @author Guillaume Laforge
  */

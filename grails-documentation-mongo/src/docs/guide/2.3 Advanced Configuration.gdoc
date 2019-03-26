@@ -27,9 +27,9 @@ grails {
 }
 {code}
 
-Available options and their descriptions are defined in the [MongoOptions|http://api.mongodb.org/java/current/com/mongodb/MongoOptions.html] javadoc.
+Available options and their descriptions are defined in the [MongoOptions|https://api.mongodb.org/java/current/com/mongodb/MongoOptions.html] javadoc.
 
-In production scenarios you will typically use more than one Mongo server in either [master/slave|http://www.mongodb.org/display/DOCS/Master+Slave] or [replication|http://www.mongodb.org/display/DOCS/Replication] scenarios. The plugin allows you to configure [replica pairs|http://www.mongodb.org/display/DOCS/Replica+Pairs]:
+In production scenarios you will typically use more than one Mongo server in either [master/slave|https://www.mongodb.org/display/DOCS/Master+Slave] or [replication|https://www.mongodb.org/display/DOCS/Replication] scenarios. The plugin allows you to configure [replica pairs|https://www.mongodb.org/display/DOCS/Replica+Pairs]:
 
 {code}
 grails {
@@ -39,7 +39,7 @@ grails {
 }
 {code}
 
-Or [replica sets|http://www.mongodb.org/display/DOCS/Replica+Sets]:
+Or [replica sets|https://www.mongodb.org/display/DOCS/Replica+Sets]:
 
 {code}
 grails {
@@ -49,4 +49,4 @@ grails {
 }
 {code}
 
-The replica sets are defined using a list of strings that conform to the Mongo [DBAddress|http://api.mongodb.org/java/current/com/mongodb/DBAddress.html] specification.
+The replica sets are defined using a list of strings that conform to the Mongo [DBAddress|https://api.mongodb.org/java/current/com/mongodb/DBAddress.html] specification.

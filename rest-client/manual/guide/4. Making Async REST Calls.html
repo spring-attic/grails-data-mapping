@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>4 Making Async REST Calls 1.0.0.M1</title>
@@ -95,7 +95,7 @@ By default GORM for REST makes all REST calls asynchronously, however it is advi
 	connectTimeout 2000
 &#125;</pre></div><p class="paragraph"/>However, you may want to take control of the asynchronous calls yourself. To do this you can disable internal Async processing:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">static</span> mapping = &#123;
 	async <span class="java&#45;keyword">false</span>
-&#125;</pre></div><p class="paragraph"/>And then simply use <a href="http://grails.org/doc/2.3.x/guide/async.html#asyncGorm" target="blank">Asynchronous GORM</a> to make the calls in a non-blocking fashion:<p class="paragraph"/><div class="code"><pre>Book.async.get(1).onComplete &#123; Book book &#45;&#62;
+&#125;</pre></div><p class="paragraph"/>And then simply use <a href="https://grails.org/doc/2.3.x/guide/async.html#asyncGorm" target="blank">Asynchronous GORM</a> to make the calls in a non-blocking fashion:<p class="paragraph"/><div class="code"><pre>Book.async.get(1).onComplete &#123; Book book &#45;&#62;
   // <span class="java&#45;keyword">do</span> stuff with the book
 &#125;</pre></div><p class="paragraph"/>
 

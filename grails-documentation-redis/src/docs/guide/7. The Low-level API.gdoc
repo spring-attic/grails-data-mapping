@@ -1,4 +1,4 @@
-There is a lower-level API that provides access to the majority of commands from the [Redis Command Reference|http://code.google.com/p/redis/wiki/CommandReference]. The API is available via a Spring bean called @redis@ that you can inject into your own artifacts.
+There is a lower-level API that provides access to the majority of commands from the [Redis Command Reference|https://code.google.com/p/redis/wiki/CommandReference]. The API is available via a Spring bean called @redis@ that you can inject into your own artifacts.
 
 For example in a controller:
 

@@ -1,3 +1,5 @@
+# grails-data-mapping is no longer actively maintained by VMware, Inc.
+
 Grails Datastore API
 ===
 
